@@ -11,6 +11,11 @@ Fetches each URL in urls, executes them one-by-one in the order they are passed,
 
 ## Status
 Champion(s): champion name(s) Author(s): non-champion author(s), if applicable Stage: -1
+
+Importent please give comments or up down votes for issue: #2
+
+
+
 ## Motivation
 Why is this important to have in the JavaScript language?
 sync imports are needed:
