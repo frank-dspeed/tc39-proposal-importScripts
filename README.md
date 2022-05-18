@@ -7,7 +7,7 @@ Fetches each URL in urls, executes them one-by-one in the order they are passed,
 
 - designed to work in Scripts and Modules 
 - designed to work without additional resolve hooks
-- only mockable via fetch api 
+
 
 ## Status
 Champion(s): champion name(s) Author(s): non-champion author(s), if applicable Stage: -1
