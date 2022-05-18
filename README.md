@@ -66,6 +66,22 @@ var urls = ['url1','url2']
 importScripts(...urls);
 ```
 
+**electron-side sync import**: electron is a combination of the nodejs with a inhired chromeium both usinging the same v8 ECMAScript runtime engine
+This leads to a lot of confusion because people that come from a NodeJS Background are familar with require and import as it supports both module systems
+while only require is usable to bootstrap a electron process when you use multiple files.
+  
+as the people can use require the think they can also use import but that assumption is totaly wrong. because Electron uses Native sideEffects to detect when the first process.Tick did happen see: 
+- [ ] https://github.com/electron/electron/issues/21457#issuecomment-1100472723 for more details
+  
+importScripts can clear the dust as it makes clear that the import is sync and it allows to reuse code between both module systems without additional files. 
+  
+**es4x-side sync import**:
+**just-js-side sync import**:
+**graaljs-js-side sync import**:
+**deno-side sync import**:
+**v8-side sync import**:
+**JavaScriptCore sync import**
+
 ## Description
 
 *Developer-friendly documentation for how to use the feature*
