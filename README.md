@@ -59,7 +59,7 @@ example.html
 main.cjs
 ```js
 const importScripts = (args) => {
-  args.map(require);
+  args.forEach(require);
 }
   
 var urls = ['url1','url2']
