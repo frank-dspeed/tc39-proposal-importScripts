@@ -76,10 +76,15 @@ as the people can use require the think they can also use import but that assump
 importScripts can clear the dust as it makes clear that the import is sync and it allows to reuse code between both module systems without additional files. 
   
 **es4x-side sync import**:
+  
 **just-js-side sync import**:
+  
 **graaljs-js-side sync import**:
+  
 **deno-side sync import**:
+  
 **v8-side sync import**:
+  
 **JavaScriptCore sync import**
 
 ## Description
