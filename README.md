@@ -51,6 +51,10 @@ example.html
 ```html
 <script src="url1"></script>
 <script src="url2"></script>  
+```  
+would get
+```html
+<script>importScripts('url1','url2')</script>
 ```
   
   
