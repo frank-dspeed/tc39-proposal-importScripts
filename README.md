@@ -5,7 +5,9 @@ current implementations: https://html.spec.whatwg.org/multipage/workers.html#dom
 importScripts(...urls)
 Fetches each URL in urls, executes them one-by-one in the order they are passed, and then returns (or throws if something went amiss).
 
-designed to work in Scripts and Modules 
+- designed to work in Scripts and Modules 
+- designed to work without additional resolve hooks
+- only mockable via fetch api 
 
 ## Status
 Champion(s): champion name(s) Author(s): non-champion author(s), if applicable Stage: -1
@@ -115,12 +117,15 @@ globalThis.console.log('hi')
 globalThis.myUltraCommonNameSpace = 'hi from code.js'
 ```
   
-main.ts 
+main.ts or .cts or .mts (the extension are used by TypeScript 4.7+) to guess the module system. The exact same code would work in all module systems that are supported by TypeScript which are 7+ as time of writing! more are coming to address issues! importScripts Eliminates all of them. and skips the need for additional package.json lookups. it implicit directly tells typescript to use classic resolveMode as it does not support npm-resolve.
 ```ts
 importScripts('./code.js')
 const message = globalThis.myUltraCommonNameSpace as const // Type: readonly 'hi from code.js'
 ```
 
+  
+  
+  
 ## Description
 
 *Developer-friendly documentation for how to use the feature*
