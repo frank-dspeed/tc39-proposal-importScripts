@@ -46,9 +46,25 @@ importScripts(...urls);
 
 **Browser-side sync import**: browsers do only support sync script imports via <script> tags in the renderer this would be a programatical way.
 also it is implemented in the web worker global scope already there it works as it is outlined here
-  
-**NodeJS-side sync import**: is implemented here via multiple calls to require if you pass Script pathes to it and you never assign what ever require returns.
 
+example.html
+```html
+<script src="url1"></script>
+<script src="url2"></script>  
+```
+  
+  
+**NodeJS-side sync import**: is implemented here via multiple calls to require if you pass Script pathes to it and you never assign what ever require returns.  
+
+main.cjs
+```js
+const importScripts = (args) => {
+  args.map(require);
+}
+  
+var urls = ['url1','url2']
+importScripts(...urls);
+```
 
 ## Description
 
