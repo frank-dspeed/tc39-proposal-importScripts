@@ -8,14 +8,13 @@ Fetches each URL in urls, executes them one-by-one in the order they are passed,
 - designed to work in Scripts and Modules 
 - designed to work without additional resolve hooks
 
+there is a voting on going to rename this to importScript() and let it only handle a single url to not colide with existing environemnt checks for webworkers 
+
+Importent please give comments or up down votes for 
+- [issue: #2](https://github.com/frank-dspeed/tc39-proposal-importScripts/issues/2) Web Compat problem environment detection
 
 ## Status
 Champion(s): champion name(s) Author(s): non-champion author(s), if applicable Stage: -1
-
-Importent please give comments or up down votes for issue: #2
-
-
-
 ## Motivation
 Why is this important to have in the JavaScript language?
 sync imports are needed:
