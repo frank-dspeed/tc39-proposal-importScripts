@@ -123,7 +123,7 @@ importScripts('./code.js')
 const message = globalThis.myUltraCommonNameSpace as const // Type: readonly 'hi from code.js'
 ```
 
-  
+see: https://github.com/microsoft/TypeScript/issues/46452
   
   
 ## Description
