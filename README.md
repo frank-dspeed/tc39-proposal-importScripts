@@ -89,7 +89,37 @@ importScripts can clear the dust as it makes clear that the import is sync and i
   
 **v8-side sync import**:
   
-**JavaScriptCore sync import**
+**JavaScriptCore sync import**:
+
+**TypeScript sync import**: in TypeScript sync import is done via require, import and so called [tripple slash references](https://www.typescriptlang.org/docs/handbook/triple-slash-directives.html) ```<reference path="..." />``` TypeScript supports
+also references and options in the configuration file tsconfig.json as TypeScript is a SuperSet of ECMAScript it would profit
+from importScripts as it would need to get implemented as they are a SuperSet and this way eliminates Problems for coders
+  
+let me explain a bit more! most coders are using Modules as a way to Author code while they need to use legacy code. they often need to do all kinds
+of transpilation and adjust ments to the typescript config and the packages they depend on while the only real goal is to inline some code snippets into
+the current code.
+  
+also we tend to over reference and explain our imports and exports that reduces productivity. Static Typing and static analyze able code is well but 
+you need to pay a price for it importScripts reduces this costs a lot. And it lets you reuse your original written code in many module systems if needed.
+  
+code1.js
+```js
+globalThis.console.log('i am a imported script')
+```
+  
+code.js works unmodified with typescript and the browser without the need for a package.json or the nodejs module system and it even imports a other script
+```js
+importScripts('./code1.js')
+globalThis.console.log('hi')
+// i assign something for the following main.ts example
+globalThis.myUltraCommonNameSpace = 'hi from code.js'
+```
+  
+main.ts 
+```ts
+importScripts('./code.js')
+const message = globalThis.myUltraCommonNameSpace as const // Type: readonly 'hi from code.js'
+```
 
 ## Description
 
@@ -150,6 +180,4 @@ You can try out an implementation of this proposal in the npm package [frobnicat
 **Q**: Is it really necessary to create such a high-level built-in construct, rather than using lower-level primitives?
 
 **A**: Instead of providing a direct `frobnicate` method, we could expose more basic primitives to compose an md5 hash with rot13. However, rot13 was demonstrated to be insecure in 2012 (citation), so exposing it as a primitive could serve as a footgun.
-``
-
-
+```
