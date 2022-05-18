@@ -93,7 +93,9 @@ importScripts can clear the dust as it makes clear that the import is sync and i
   
 **JavaScriptCore sync import**:
 
-**TypeScript sync import**: in TypeScript sync import is done via require, import and so called [tripple slash references](https://www.typescriptlang.org/docs/handbook/triple-slash-directives.html) ```<reference path="..." />``` TypeScript supports
+  
+### TypeScript
+in TypeScript sync import is done via require, import and so called [tripple slash references](https://www.typescriptlang.org/docs/handbook/triple-slash-directives.html) ```<reference path="..." />``` TypeScript supports
 also references and options in the configuration file tsconfig.json as TypeScript is a SuperSet of ECMAScript it would profit
 from importScripts as it would need to get implemented as they are a SuperSet and this way eliminates Problems for coders
   
@@ -104,6 +106,7 @@ the current code.
 also we tend to over reference and explain our imports and exports that reduces productivity. Static Typing and static analyze able code is well but 
 you need to pay a price for it importScripts reduces this costs a lot. And it lets you reuse your original written code in many module systems if needed.
   
+**TypeScript sync import**:  
 code1.js
 ```js
 globalThis.console.log('i am a imported script')
