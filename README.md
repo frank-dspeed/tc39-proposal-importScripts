@@ -1,4 +1,12 @@
-# tc39-proposal-importScripts
+# wintercg-proposal importScripts / importScript
+
+## history
+this was a tc39 proposal but tc39 will not integrate something that breaks the web so we would need to make this a single url taking function called importScript this algins also with our goals as ECMAScript has no concept of i/o its better to agree on that on the implementer level:
+
+nodejs, justjs, deno, chromium,
+
+## Explainer
+
 The importScripts() method of the GlobalScope interface synchronously imports one or more scripts into the scope. (inlining)
 current implementations: https://html.spec.whatwg.org/multipage/workers.html#dom-workerglobalscope-importscripts-dev
 
@@ -15,6 +23,22 @@ Importent please give comments or up down votes for
 
 ## Status
 Champion(s): champion name(s) Author(s): non-champion author(s), if applicable Stage: -1
+
+Implemented: importScript
+- es4x
+- justjs (v8 embedder framework) linux only at present
+Implemented: importScripts
+- Web Worker API
+Implementing: importScripts
+- es4x
+- justjs (v8 embedder framework) linux only at present
+Integration Phase
+- NodeJS (build nodejs releases with import script from 18+ via snapshot feature)
+- NodeJS (offer npm package with subpackages cjs mjs)
+- Deno (needs talk to deno land as i am not sure how they bundle at present but bundler integration will be the key)
+- GraalJS is at present related to es4x as that is the only runtime implementation with graal-node
+Implemented: importScript and importScripts
+
 ## Motivation
 Why is this important to have in the JavaScript language?
 sync imports are needed:
